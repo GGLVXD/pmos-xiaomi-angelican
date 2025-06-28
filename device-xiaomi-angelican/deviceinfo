@@ -7,7 +7,7 @@ deviceinfo_name="Xiaomi Redmi 9C NFC"
 deviceinfo_manufacturer="Xiaomi"
 deviceinfo_codename="xiaomi-angelican"
 deviceinfo_year="2020"
-deviceinfo_arch="aarch64"
+deviceinfo_arch="armhf"
 deviceinfo_gpu_accelerated="false"
 
 # Device related

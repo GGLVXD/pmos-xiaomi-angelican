@@ -5,12 +5,13 @@ pkgname=linux-xiaomi-angelican
 pkgver=4.9.190
 pkgrel=0
 pkgdesc="Xiaomi Redmi 9C NFC kernel fork"
-arch="aarch64"
-_carch="arm64"
+arch="armv7"
+_carch="arm"
 _flavor="xiaomi-angelican"
 url="https://kernel.org"
 license="GPL-2.0-only"
 options="!strip !check !tracedeps pmb:cross-native"
+subpackages="$pkgname-dev"
 makedepends="
 	bash
 	bc
@@ -24,10 +25,10 @@ makedepends="
 
 # Source
 _repository="kernel-xiaomi-mt6765"
-_commit="5b52fedbe4d7c6809b5040f7486a8b72812f3fba"
+_commit="a7d1d6bbccc32d121cb756e5fc3f756128bd8c0b"
 _config="config-$_flavor.$arch"
 source="
-	$pkgname-$_commit.tar.gz::https://gitlab.com/ubports/porting/community-ports/android10/xiaomi-redmi-9c/$_repository/-/archive/$_commit/$_repository-$_commit.tar.gz
+	$pkgname-$_commit.zip::https://github.com/GGLVXD/$_repository/archive/$_commit.zip
 	$_config
 	001-touchscreen-firmware-loading-time.patch
 	002-battery-percentage.patch
@@ -63,8 +64,8 @@ package() {
 }
 
 sha512sums="
-beeaa1b5b5d3e6f635508c6f421051080f7fdc296909db7448e4c706b6a54755badc2ea0c1316dbf0a1d394dbea15266a84dfa36d9818c8df99747484c9175b6  linux-xiaomi-angelican-5b52fedbe4d7c6809b5040f7486a8b72812f3fba.tar.gz
-399dbdda808e8b6bce506ac34a7ad6a27bf5bcfcf24e62d13a7a6cfb08309e41388dfa4e001c3c9ee5265c4d69f60dfe453c5f62b43914675f1868963c95cdf7  config-xiaomi-angelican.aarch64
+b02651c20cbaa9f0126f2397fcc0d0568d9fd7e7ee3e90e515473f5319025d6d95ec069da919691e0af3ba1241c68d66d97f4f7e692d62ebac2ff2f26e66c898  linux-xiaomi-angelican-a7d1d6bbccc32d121cb756e5fc3f756128bd8c0b.zip
+ea20d9b4bb46b7a95330626f222747ca14a483a326053d5dbade02f4c54f950b63500704a079369708d0aea6b982cf1fb338e7a00dcf2479371be71cd9e96bdd  config-xiaomi-angelican.armv7
 3fc36011ab030382f6b74e3821dcc75a236e12fe38bf18639fededc6c49a8c809d9ca1af5a9f2ed83f5f412a383918db14b4af48eda7087ec5997ca00e018152  001-touchscreen-firmware-loading-time.patch
 2ed25978e3c91addf7e568b68ccb6036aa581da0981ec75527e25d15d0ee7dfed97100376e58ce6a6c07ef8a96210a30c0ad91b3cea29528aa89fc59980691bf  002-battery-percentage.patch
 c33fad9de627e72f12e61e728fa1ec53ef15259c7790392a997cc7269e60e45da9534d58851c3b348a1729aaa134d1df305e33546e8a1f3654462f2c3c1d9563  003-fix-check-lxdialog-makefile.patch

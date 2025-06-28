@@ -5,7 +5,7 @@ pkgver=0.1
 pkgrel=0
 url="https://postmarketos.org"
 license="MIT"
-arch="aarch64"
+arch="armv7"
 options="!check !archcheck !strip"
 depends="
 	linux-xiaomi-angelican
